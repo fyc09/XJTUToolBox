@@ -1,5 +1,5 @@
 from app.sessions.common_session import CommonLoginSession
-from app.utils import cfg
+from shared import cfg
 from jwapp.util import JwappNewLogin
 
 

@@ -17,8 +17,9 @@ from app.sub_interfaces.ScoreDetailDialog import ScoreDetailDialog, EmptyScoreDe
 from app.threads.GraduateScoreThread import GraduateScoreThread
 from app.threads.ProcessWidget import ProcessWidget
 from app.threads.ScoreThread import ScoreThread
-from app.utils import StyleSheet, cfg, AccountDataManager, accounts, logger, DATA_DIRECTORY
+from app.utils import StyleSheet
 from app.utils.notification import notify
+from shared import cfg, AccountDataManager, accounts, logger, DATA_DIRECTORY
 
 
 class ScoreInterface(ScrollArea):

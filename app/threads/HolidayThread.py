@@ -1,6 +1,6 @@
 from PyQt5.QtCore import QThread, pyqtSignal
 
-from app.utils import logger
+from shared import logger
 from auth import get_session
 from schedule.holiday import get_holiday_days
 

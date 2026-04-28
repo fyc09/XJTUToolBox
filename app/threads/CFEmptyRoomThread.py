@@ -5,8 +5,8 @@ import requests
 from PyQt5.QtCore import pyqtSignal
 
 from ..threads.ProcessWidget import ProcessThread
-from ..utils import logger
-from ..utils.cache import CacheManager
+from shared import logger
+from shared.cache import CacheManager
 
 
 class CFEmptyRoomThread(ProcessThread):

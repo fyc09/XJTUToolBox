@@ -2,7 +2,7 @@ import logging
 import os
 import time
 
-from .migrate_data import LOG_DIRECTORY
+from shared.migrate_data import LOG_DIRECTORY
 
 
 def get_logger(name, path):

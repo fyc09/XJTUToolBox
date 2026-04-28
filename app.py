@@ -14,9 +14,9 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # 去除广告 (静默导入业务逻辑)
 with contextlib.redirect_stdout(None):
     from app.main_window import MainWindow, MacReopenFilter
-    from app.utils import cfg
+    from shared import cfg
     from app.utils.single_app import SingleApplication
-    from app.utils.linux_compat import apply_linux_env_patches
+    from shared.linux_compat import apply_linux_env_patches
 
 # Linux 原生体验与打包兼容性修正层
 apply_linux_env_patches()

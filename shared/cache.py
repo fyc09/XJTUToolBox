@@ -4,8 +4,8 @@ import json
 import shutil
 from json import JSONDecodeError
 
-from .account import Account
-from .migrate_data import DATA_DIRECTORY, CACHE_DIRECTORY
+from shared.account import Account
+from shared.migrate_data import DATA_DIRECTORY, CACHE_DIRECTORY
 
 DEFAULT_DATA_DIRECTORY = os.path.join(DATA_DIRECTORY, "data")
 

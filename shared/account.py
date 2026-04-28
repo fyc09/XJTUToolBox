@@ -10,12 +10,12 @@ import keyring.errors
 from Crypto.Cipher import AES
 from PyQt5.QtCore import pyqtSignal, QObject
 
-from .session_manager import SessionManager
-from .config import cfg
-from .migrate_data import DATA_DIRECTORY
+from shared.session_manager import SessionManager
+from shared.config import cfg
+from shared.migrate_data import DATA_DIRECTORY
 
 # Linux Keyring 崩溃保护层
-from .linux_compat import apply_linux_keyring_patches
+from shared.linux_compat import apply_linux_keyring_patches
 apply_linux_keyring_patches()
 
 def pad(text):
@@ -70,7 +70,7 @@ class Account(QObject):
         # 存储当前账号用于访问各个需要登录网站的 session
         self.session_manager = SessionManager()
         # 存一个 AccountDataManager 对象来计算头像的实际路径
-        from .cache import AccountDataManager
+        from shared.cache import AccountDataManager
         self.data_manager = AccountDataManager(self)
 
     def avatar_exists(self):
@@ -229,7 +229,7 @@ class AccountManager(QObject):
         self.setEncrypted(False, use_keyring=cfg.useKeyring.value)
         self.accountCleared.emit()
         # 清除所有缓存
-        from app.utils.cache import remove_all_cache
+        from shared.cache import remove_all_cache
         remove_all_cache()
 
     def setEncrypted(self, status, key=None, use_keyring=False):

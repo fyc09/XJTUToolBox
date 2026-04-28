@@ -2,7 +2,7 @@ from enum import Enum
 
 from PyQt5.QtGui import QColor
 from qfluentwidgets import StyleSheetBase, Theme
-from .config import cfg
+from shared.config import cfg
 
 
 class StyleSheet(StyleSheetBase, Enum):

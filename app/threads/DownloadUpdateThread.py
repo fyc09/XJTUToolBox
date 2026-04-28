@@ -7,7 +7,7 @@ import requests
 from PyQt5.QtCore import QStandardPaths
 
 from app.components.ProgressInfoBar import ProgressBarThread
-from app.utils import CACHE_DIRECTORY, logger
+from shared import CACHE_DIRECTORY, logger
 
 
 class DownloadUpdateThread(ProgressBarThread):

@@ -1,7 +1,7 @@
 from auth.constant import JWXT_LOGIN_URL
 from auth.new_login import NewLogin
 from .common_session import CommonLoginSession
-from ..utils import cfg
+from shared import cfg
 
 
 class JWXTSession(CommonLoginSession):

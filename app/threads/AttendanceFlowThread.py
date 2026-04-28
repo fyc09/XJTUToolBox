@@ -5,7 +5,7 @@ import requests
 
 from auth import ServerError
 from ..sessions.attendance_session import AttendanceSession
-from ..utils import Account, cfg, logger, accounts
+from shared import Account, cfg, logger, accounts
 from attendance.attendance import Attendance
 from .ProcessWidget import ProcessThread
 from PyQt5.QtCore import pyqtSignal

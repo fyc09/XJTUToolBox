@@ -20,6 +20,85 @@ from urllib.request import urlopen
 from urllib.error import URLError
 
 
+def _read_current_version() -> str:
+    """读取本地版本号，优先读取运行目录可访问的版本文件。"""
+    candidate_paths = [
+        os.path.join("assets", "version.txt"),
+        os.path.join("_internal", "assets", "version.txt"),
+    ]
+    for path in candidate_paths:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        except OSError:
+            continue
+    return "0.0.0"
+
+
+def _select_release_download_url(release: dict) -> str:
+    """按当前平台选择最合适的下载链接，找不到时回退到发布页链接。"""
+    assets = release.get("assets", []) or []
+    system = platform.system()
+    machine = platform.machine().lower()
+
+    if system == "Windows":
+        for asset in assets:
+            name = str(asset.get("name", "")).lower()
+            if "windows" in name:
+                return asset.get("browser_download_url", "")
+    elif system == "Darwin":
+        for asset in assets:
+            name = str(asset.get("name", "")).lower()
+            if machine in name:
+                return asset.get("browser_download_url", "")
+        for asset in assets:
+            name = str(asset.get("name", "")).lower()
+            if "darwin" in name or "mac" in name:
+                return asset.get("browser_download_url", "")
+
+    if assets:
+        return assets[0].get("browser_download_url", "")
+    return release.get("html_url", "")
+
+
+def check_update(prerelease: bool = False):
+    """检查 GitHub Release 是否有更新，返回 (latest_version, download_url, release_notes) 或 None。"""
+    api_url = "https://api.github.com/repos/yan-xiaoo/XJTUToolbox/releases"
+    response = requests.get(api_url, timeout=15)
+    response.raise_for_status()
+    releases = response.json()
+
+    if not isinstance(releases, list):
+        raise ValueError("Unexpected releases response")
+
+    target_release = None
+    for release in releases:
+        if release.get("draft", False):
+            continue
+        if not prerelease and release.get("prerelease", False):
+            continue
+        target_release = release
+        break
+
+    if not target_release:
+        return None
+
+    latest_version = str(target_release.get("tag_name", "")).lstrip("vV")
+    current_version = _read_current_version().lstrip("vV")
+
+    try:
+        has_update = parse(latest_version) > parse(current_version)
+    except Exception:
+        has_update = latest_version != current_version
+
+    if not has_update:
+        return None
+
+    download_url = _select_release_download_url(target_release)
+    release_notes = target_release.get("body", "") or ""
+    return latest_version, download_url, release_notes
+
+
 class Updater:
     """应用程序更新器，负责检查、下载、解压和安装最新版本的应用程序。"""
 

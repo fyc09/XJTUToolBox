@@ -1,4 +1,3 @@
-# app/utils/linux_compat.py
 import os
 import sys
 import sqlite3

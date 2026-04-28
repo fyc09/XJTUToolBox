@@ -14,7 +14,7 @@ from ..threads.GraduateJudgeThread import GraduateJudgeThread, GraduateJudgeChoi
 from ..utils import StyleSheet
 from ..threads.JudgeThread import JudgeThread, JudgeChoice
 from ..threads.ProcessWidget import ProcessWidget
-from ..utils import accounts
+from shared import accounts
 
 
 class JudgeCard(CardWidget):

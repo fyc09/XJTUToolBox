@@ -1,5 +1,5 @@
 import unittest
-from app.utils.session_manager import SessionManager
+from shared.session_manager import SessionManager
 
 
 class SessionManagerTestCase(unittest.TestCase):

@@ -4,7 +4,7 @@ from PyQt5.QtCore import pyqtSignal
 from auth import get_session
 from notification import NotificationManager
 from .ProcessWidget import ProcessThread
-from ..utils import logger
+from shared import logger
 
 
 class NoticeThread(ProcessThread):

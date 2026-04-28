@@ -4,7 +4,8 @@ from qfluentwidgets import ScrollArea, MessageBoxBase, SubtitleLabel, ToolTipFil
     PlainTextEdit, CaptionLabel
 
 from app.threads.ProcessWidget import ProcessThread
-from app.utils import StyleSheet, accounts
+from app.utils import StyleSheet
+from shared import accounts
 from jwxt import QuestionnaireTemplate
 
 

@@ -12,7 +12,8 @@ from ..components.MultiSelectionComboBox import MultiSelectionComboBox
 from ..threads.CFEmptyRoomThread import CFEmptyRoomThread
 from ..threads.EmptyRoomThread import EmptyRoomThread
 from ..threads.ProcessWidget import ProcessWidget
-from ..utils import StyleSheet, DataManager, cfg, accounts
+from ..utils import StyleSheet
+from shared import DataManager, cfg, accounts
 from jwxt.empty_room import CAMPUS_BUILDING_DICT
 
 

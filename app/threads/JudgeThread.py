@@ -5,7 +5,7 @@ from PyQt5.QtCore import pyqtSignal
 
 from .ProcessWidget import ProcessThread
 from ..sessions.jwxt_session import JWXTSession
-from ..utils import Account, logger, accounts
+from shared import Account, logger, accounts
 
 from jwxt import AutoJudge, QuestionnaireTemplate
 from auth import ServerError

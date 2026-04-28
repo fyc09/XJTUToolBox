@@ -4,7 +4,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor
 from qfluentwidgets import MessageBoxBase, TitleLabel, CaptionLabel, EditableComboBox
 
-from app.utils import accounts
+from shared import accounts
 
 
 class ChangeTermDialog(MessageBoxBase):

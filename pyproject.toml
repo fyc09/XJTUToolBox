@@ -5,6 +5,7 @@ requires-python = ">=3.10, <=3.13"
 readme = "README.md"
 description = "A desktop application offering a variety of services for Xi'an Jiaotong University, including attendance check, schedule inquiry, and one-key teaching evaluation."
 dependencies = [
+    "click>=8.1.0",
     "requests>=2.33.0",
     "fake-useragent~=2.2.0",
     "pycryptodome~=3.21.0",
@@ -54,3 +55,7 @@ dev = [
     "pyinstaller>=6.17.0",
     "pyqt5-stubs>=5.15"
 ]
+
+[project.scripts]
+xjtutoolbox = "cli.main:cli"
+xjtutool = "cli.main:cli"

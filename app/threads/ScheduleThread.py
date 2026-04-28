@@ -5,8 +5,8 @@ from auth import ServerError
 from jwxt.schedule import Schedule
 from .ProcessWidget import ProcessThread
 from ..sessions.jwxt_session import JWXTSession
-from ..utils import logger, cfg
-from ..utils.account import accounts
+from shared import logger, cfg
+from shared.account import accounts
 
 
 class ScheduleThread(ProcessThread):

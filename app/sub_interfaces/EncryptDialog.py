@@ -3,7 +3,7 @@ from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtGui import QColor
 from PyQt5.QtWidgets import QFrame, QHBoxLayout
 
-from ..utils import accounts, cfg
+from shared import accounts, cfg
 from qfluentwidgets import MessageBoxBase, TitleLabel, CaptionLabel, PasswordLineEdit, BodyLabel, PrimaryPushButton
 
 

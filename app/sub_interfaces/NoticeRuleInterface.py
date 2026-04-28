@@ -4,7 +4,7 @@ from qfluentwidgets import BodyLabel, SubtitleLabel, PrimaryPushButton
 
 from ..components.NoticeRuleCard import NoticeRuleCard, AddRuleCard
 from notification import Source, NotificationManager, Ruleset
-from ..utils.cache import dataManager
+from shared.cache import dataManager
 
 
 class NoticeRuleInterface(QFrame):

@@ -7,8 +7,8 @@ from auth import ServerError
 from jwxt.empty_room import EmptyRoom
 from ..sessions.jwxt_session import JWXTSession
 from ..threads.ProcessWidget import ProcessThread
-from ..utils import accounts, logger, cfg
-from ..utils.cache import CacheManager
+from shared import accounts, logger, cfg
+from shared.cache import CacheManager
 
 
 class EmptyRoomThread(ProcessThread):

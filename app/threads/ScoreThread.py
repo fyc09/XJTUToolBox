@@ -7,7 +7,7 @@ from jwxt.schedule import Schedule
 from jwxt.score import Score
 from ..sessions.jwxt_session import JWXTSession
 from ..threads.ProcessWidget import ProcessThread
-from ..utils import accounts, logger, cfg
+from shared import accounts, logger, cfg
 from auth import ServerError
 
 

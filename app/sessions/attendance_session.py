@@ -1,7 +1,7 @@
 import enum
 
 from app.sessions.common_session import CommonLoginSession
-from app.utils import cfg
+from shared import cfg
 from attendance.attendance import AttendanceNewLogin, AttendanceNewWebVPNLogin
 from auth import WEBVPN_LOGIN_URL
 from auth.new_login import NewLogin

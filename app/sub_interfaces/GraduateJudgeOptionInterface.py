@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QSizePolicy
 from qfluentwidgets import ScrollArea, SubtitleLabel, CaptionLabel, ComboBox, PlainTextEdit, PushButton, BodyLabel, \
     MessageBoxBase
 
-from app.utils import accounts, AccountDataManager
+from shared import accounts, AccountDataManager
 from gste.judge import GraduateQuestionnaireData, GraduateQuestionItem, GraduateQuestionnaire
 
 

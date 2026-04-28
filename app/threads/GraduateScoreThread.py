@@ -5,7 +5,7 @@ from auth.new_login import NewLogin
 from gmis.score import GraduateScore
 from ..sessions.gmis_session import GMISSession
 from ..threads.ProcessWidget import ProcessThread
-from ..utils import accounts, logger, cfg
+from shared import accounts, logger, cfg
 from auth import ServerError, GMIS_LOGIN_URL
 
 

@@ -3,7 +3,7 @@ from enum import Enum
 
 from requests import HTTPError
 
-from app.utils import logger, cfg
+from shared import logger, cfg
 from auth import ServerError
 from PyQt5.QtCore import QThread, pyqtSignal
 

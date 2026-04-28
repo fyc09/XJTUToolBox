@@ -6,7 +6,7 @@ from PyQt5.QtCore import pyqtSignal
 from auth import ServerError
 from lms import LMSUtil
 from .ProcessWidget import ProcessThread
-from ..utils import accounts, logger
+from shared import accounts, logger
 
 
 class LMSAction(Enum):

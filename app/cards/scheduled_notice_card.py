@@ -7,8 +7,8 @@ from PyQt5.QtWidgets import QWidget, QHBoxLayout
 from qfluentwidgets import ExpandGroupSettingCard, BodyLabel, SwitchButton, IndicatorPosition, TimePicker, \
     FluentIconBase, PushButton, ConfigItem, MessageBox
 
-from app.utils import cfg
-from app.utils.config import TraySetting
+from shared import cfg
+from shared.config import TraySetting
 
 
 class ScheduledNoticeCard(ExpandGroupSettingCard):

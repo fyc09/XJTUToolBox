@@ -117,7 +117,7 @@ def load_client_id() -> dict:
     """
     读取 client_id.txt 文件中的 Client ID
     """
-    from app.utils.cache import cacheManager
+    from shared.cache import cacheManager
     data = cacheManager.read_expire_json("client_id.json", expire_day=1)
     return data or {}
 
@@ -156,7 +156,7 @@ def write_client_id(client_id_dict: dict):
     """
     将 Client ID 写入 client_id.txt 文件
     """
-    from app.utils.cache import cacheManager
+    from shared.cache import cacheManager
     cacheManager.write_expire_json("client_id.json", client_id_dict, allow_overwrite=True)
 
 

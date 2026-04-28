@@ -14,14 +14,17 @@ from auth import get_session
 from .DownloadUpdateThread import DownloadUpdateThread
 from ..components.CustomMessageBox import MessageBoxUpdate
 from ..components.ProgressInfoBar import ProgressInfoBar
-from ..utils import logger, CACHE_DIRECTORY
-from ..utils.config import cfg
+from shared import logger, CACHE_DIRECTORY
+from shared.config import cfg
+from shared.update_checker import (
+    fetch_latest_release_info,
+    get_download_url_from_assets,
+    generate_cloudflare_service_url,
+    is_github_rate_limited,
+)
 from enum import Enum
 import requests
-import platform
 import markdown
-
-from ..utils.fastest_mirror import FastestMirror
 
 
 class UpdateStatus(Enum):
@@ -51,60 +54,19 @@ class UpdateThread(QThread):
         self.timeout = timeout  # 超时时间
         self.session = get_session()
 
-    def fetch_latest_release_info(self):
-        """获取最新的发布信息。"""
-        response = requests.get(
-            FastestMirror.get_github_api_mirror("yan-xiaoo", "XJTUToolbox", not cfg.prereleaseEnable.value),
-            timeout=self.timeout
-        )
-        response.raise_for_status()
-        return response.json()[0] if cfg.prereleaseEnable.value else response.json()
-
-    @staticmethod
-    def generate_cloudflare_service_url(version, original_download_url):
-        """
-        根据待下载的版本和系统信息，生成 cloudflare CDN 的请求 URL。
-        CDN 部署在 Cloudflare workers 上，且其请求格式为:
-        https://gh-release.xjtutoolbox.com/?file=releases/{version}/{original_filename}
-        :param version: 版本信息，需要包含 v 开头，比如 v1.1.4
-        :param original_download_url: GitHub Release 上的原始下载 URL，我们需要从中提取文件名。
-        """
-        return f"https://gh-release.xjtutoolbox.com/?file=releases/{version}/{original_download_url.split('/')[-1]}"
-
-    @staticmethod
-    def get_download_url_from_assets(assets):
-        """从发布信息中获取下载URL。"""
-        system = platform.system()
-        if system == "Windows":
-            for asset in assets:
-                if "windows" in asset["name"]:
-                    return asset["browser_download_url"], asset["size"]
-        elif system == "Darwin":
-            arc = platform.machine()
-            if arc == "arm64":
-                for asset in assets:
-                    if "arm64" in asset["name"]:
-                        return asset["browser_download_url"], asset["size"]
-            elif arc == "x86_64":
-                for asset in assets:
-                    if "x86_64" in asset["name"]:
-                        return asset["browser_download_url"], asset["size"]
-        else:
-            return None, None
-
     def run(self):
         """执行更新检查逻辑。"""
         try:
-            data = self.fetch_latest_release_info()
+            data = fetch_latest_release_info(cfg.prereleaseEnable.value, timeout=self.timeout)
 
             version = data["tag_name"]
             content = data["body"]
-            asset_url, self.total_size = self.get_download_url_from_assets(data["assets"])
+            asset_url, self.total_size = get_download_url_from_assets(data.get("assets", []) or [])
 
             if asset_url is None:
                 cloudflare_asset_url = None
             else:
-                cloudflare_asset_url = self.generate_cloudflare_service_url(version, asset_url)
+                cloudflare_asset_url = generate_cloudflare_service_url(version, asset_url)
 
             if parse(version) > cfg.version:
                 self.title = f"发现新版本：{cfg.version} ——> {parse(version)}\n更新日志: "
@@ -120,7 +82,7 @@ class UpdateThread(QThread):
         except requests.HTTPError as e:
             if e.response.status_code == 404:
                 self.updateSignal.emit(UpdateStatus.NO_UPDATE)
-            elif e.response.status_code == 403 and "rate limit exceeded for url" in str(e):
+            elif is_github_rate_limited(e):
                 logger.error(self.tr("检查更新失败：GitHub API 超出请求限制"))
                 self.fail_reason = self.tr("GitHub API 超出请求限制，请尝试关闭代理")
                 self.updateSignal.emit(UpdateStatus.FAILURE)

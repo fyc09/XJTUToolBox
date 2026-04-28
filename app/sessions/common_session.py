@@ -3,7 +3,7 @@ from abc import abstractmethod, ABCMeta
 
 import requests
 
-from ..utils import cfg
+from shared import cfg
 
 
 class CommonLoginSession(requests.Session, metaclass=ABCMeta):

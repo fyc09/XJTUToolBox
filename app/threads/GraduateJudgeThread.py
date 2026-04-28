@@ -9,7 +9,7 @@ from gste.judge import GraduateAutoJudge, GraduateQuestionnaire, GraduateQuestio
 from .ProcessWidget import ProcessThread
 from ..sessions.gmis_session import GMISSession
 from ..sessions.gste_session import GSTESession
-from ..utils import Account, logger, accounts
+from shared import Account, logger, accounts
 
 from auth import ServerError
 from enum import Enum

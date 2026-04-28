@@ -9,7 +9,7 @@ from attendance import Attendance
 from auth import ServerError
 from .ProcessWidget import ProcessThread
 from ..sessions.attendance_session import AttendanceSession
-from ..utils import accounts, logger, cfg
+from shared import accounts, logger, cfg
 
 
 class AttendanceFlowLogin(Enum):

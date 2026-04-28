@@ -13,9 +13,10 @@ from qfluentwidgets import ScrollArea, CommandBar, FluentIcon, Action, BodyLabel
 from ..components.NoticeCard import NoticeCard
 from ..threads.NoticeThread import NoticeThread
 from ..threads.ProcessWidget import ProcessWidget
-from ..utils import StyleSheet, cfg
+from ..utils import StyleSheet
+from shared import cfg
 from ..utils.notification import notify
-from ..utils.cache import cacheManager, dataManager
+from shared.cache import cacheManager, dataManager
 from notification import NotificationManager, Notification
 
 

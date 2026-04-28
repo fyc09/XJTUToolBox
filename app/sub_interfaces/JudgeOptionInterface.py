@@ -7,7 +7,8 @@ from qfluentwidgets import ScrollArea, MessageBoxBase, SubtitleLabel, ToolTipFil
 
 from app.threads.JudgeThread import JudgeChoice
 from app.threads.ProcessWidget import ProcessThread
-from app.utils import StyleSheet, accounts, AccountDataManager
+from app.utils import StyleSheet
+from shared import accounts, AccountDataManager
 from jwxt import Questionnaire, QuestionnaireTemplate
 
 

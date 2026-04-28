@@ -7,7 +7,7 @@ from auth.new_login import NewLogin
 from gmis.schedule import GraduateSchedule
 from ..sessions.gmis_session import GMISSession
 from ..threads.ProcessWidget import ProcessThread
-from ..utils import accounts, logger, cfg
+from shared import accounts, logger, cfg
 
 
 class GraduateScheduleThread(ProcessThread):

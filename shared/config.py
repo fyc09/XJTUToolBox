@@ -8,7 +8,7 @@ from qfluentwidgets import QConfig, qconfig, OptionsConfigItem, OptionsValidator
 from enum import Enum
 
 from auth.util import old_fp_visitor_id, generate_user_agent
-from .migrate_data import DATA_DIRECTORY
+from shared.migrate_data import DATA_DIRECTORY
 
 
 class BooleanSerializer(ConfigSerializer):

@@ -9,7 +9,7 @@ from qfluentwidgets import InfoBarManager, InfoBarPosition, InfoBarIcon, Transpa
 from qfluentwidgets.components.widgets.info_bar import InfoIconWidget
 from qfluentwidgets import FluentIcon as FIF
 
-from app.utils import logger
+from shared import logger
 
 
 class ProgressInfoBar(QFrame):

@@ -7,7 +7,8 @@ from qfluentwidgets import TitleLabel, ScrollArea, LineEdit, PasswordLineEdit, P
 from auth.new_login import NewLogin
 from .VerifyCodeDialog import VerifyCodeDialog
 from ..threads.LoginThreads import LoginThread
-from ..utils import StyleSheet, cfg, accounts
+from ..utils import StyleSheet
+from shared import cfg, accounts
 
 
 class LoginInterface(ScrollArea):

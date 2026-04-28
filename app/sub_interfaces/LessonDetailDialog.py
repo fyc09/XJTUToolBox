@@ -11,7 +11,7 @@ from qfluentwidgets import MessageBoxBase, SimpleCardWidget, setFont, FluentStyl
 from qfluentwidgets.common.overload import singledispatchmethod
 from qfluentwidgets.components.widgets.card_widget import CardSeparator
 
-from app.utils import accounts
+from shared import accounts
 from schedule import getClassStartTime, getClassEndTime
 from schedule.schedule_database import CourseInstance, CourseStatus, Exam
 from schedule.schedule_service import ScheduleService

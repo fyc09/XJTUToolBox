@@ -6,7 +6,7 @@ from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, QTimer, Qt
 from qfluentwidgets import ProgressBar, VBoxLayout, BodyLabel, PrimaryPushButton, IndeterminateProgressBar, \
     MessageBoxBase
 
-from ..utils import logger
+from shared import logger
 
 
 class ProcessWidget(QFrame):
