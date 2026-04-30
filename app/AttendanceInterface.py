@@ -4,7 +4,8 @@ from PyQt5.QtWidgets import QWidget, QStackedWidget, QTableWidgetItem, QFrame, Q
 from PyQt5.QtCore import Qt, pyqtSlot
 from qfluentwidgets import ScrollArea, VBoxLayout, Pivot, BodyLabel, PrimaryPushButton, TableWidget, \
     CommandBar, Action, FluentIcon, InfoBar, InfoBarPosition, PipsPager, PipsScrollButtonDisplayMode, MessageBox
-from .utils import StyleSheet, accounts, AccountDataManager, Color
+from shared import accounts, AccountDataManager
+from .utils import StyleSheet, Color
 from attendance.attendance import AttendanceFlow, FlowRecordType
 from .threads.ProcessWidget import ProcessWidget
 from .threads.AttendanceFlowThread import AttendanceFlowThread, AttendanceFlowChoice

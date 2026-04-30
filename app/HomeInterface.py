@@ -1,7 +1,8 @@
 from PyQt5.QtCore import Qt, pyqtSlot
 from qfluentwidgets import ScrollArea, TitleLabel, FluentIcon as FIF, Theme, TogglePushButton, PushButton, InfoBar, InfoBarPosition
 from PyQt5.QtWidgets import QVBoxLayout, QWidget, QHBoxLayout
-from .utils import accounts, StyleSheet, cfg
+from shared import accounts, cfg
+from .utils import StyleSheet
 from .cards.link_card import LinkCardView, LinkCard
 from .sub_interfaces.EncryptDialog import DecryptFrame
 from .components.CardManagerDialog import CardManagerDialog

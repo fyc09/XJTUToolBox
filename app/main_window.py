@@ -37,8 +37,9 @@ from .sub_interfaces.NoticeInterface import NoticeInterface
 from .sub_interfaces.NoticeSettingInterface import NoticeSettingInterface
 from .sub_interfaces.WebVPNConvertInterface import WebVPNConvertInterface
 from .threads.UpdateThread import UpdateThread, UpdateStatus
-from .utils import cfg, accounts, MyFluentIcon, SessionManager, logger, migrate_all
-from .utils.config import TraySetting
+from shared import cfg, accounts, SessionManager, logger, migrate_all
+from shared.config import TraySetting
+from .utils import MyFluentIcon
 
 
 def registerSession():

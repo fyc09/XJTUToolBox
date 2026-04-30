@@ -17,10 +17,10 @@ from .cards.custom_switch_card import CustomSwitchSettingCard
 from .components.CustomMessageBox import ConfirmBox
 from .sub_interfaces.ResetVisitorIdDialog import ResetVisitorIdDialog
 from .threads.UpdateThread import checkUpdate, UpdateStatus
-from .utils.account import KEYRING_SERVICE_NAME
+from shared.account import KEYRING_SERVICE_NAME
+from shared.config import cfg, TraySetting
+from shared import accounts, LOG_DIRECTORY, DEFAULT_ACCOUNT_PATH
 from .utils.auto_start import add_to_startup, delete_from_startup
-from .utils.config import cfg, TraySetting
-from .utils import accounts, LOG_DIRECTORY, DEFAULT_ACCOUNT_PATH
 from .utils.style_sheet import StyleSheet
 from .cards.custom_color_setting_card import CustomColorSettingCard
 from .cards.scheduled_notice_card import ScheduledNoticeCard

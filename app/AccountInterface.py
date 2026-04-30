@@ -8,8 +8,9 @@ from qfluentwidgets import ScrollArea, TitleLabel, VBoxLayout, StrongBodyLabel, 
 from auth.new_login import NewLogin
 from .sub_interfaces.AvatarDialog import AvatarDialog
 from .sub_interfaces.EncryptDialog import DecryptFrame
-from .utils import StyleSheet, cfg, AccountDataManager
-from .utils.account import Account, AccountManager
+from shared import cfg, AccountDataManager
+from shared.account import Account, AccountManager
+from .utils import StyleSheet
 
 
 class BadgeLabel(QLabel):

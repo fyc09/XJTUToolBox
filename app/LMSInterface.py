@@ -16,7 +16,8 @@ from .components.ProgressInfoBar import ProgressInfoBar
 from .threads.LMSFileDownloadThread import LMSFileDownloadThread
 from .threads.LMSThread import LMSThread, LMSAction
 from .threads.ProcessWidget import ProcessWidget
-from .utils import StyleSheet, accounts, AccountDataManager, cfg
+from shared import accounts, AccountDataManager, cfg
+from .utils import StyleSheet
 from .sub_interfaces.lms import PageStatus, LMSStartPage, LMSCoursePage, LMSActivityPage, LMSDetailPage, LMSSubmissionPage, LMSVideoPage
 from .sub_interfaces.lms.image_preview_dialog import LMSImagePreviewDialog
 from .sub_interfaces.lms.common import format_size as common_format_size, format_replay_video_label, \

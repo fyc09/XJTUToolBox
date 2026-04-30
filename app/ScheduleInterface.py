@@ -26,9 +26,10 @@ from .threads.ProcessWidget import ProcessWidget
 from .threads.ScheduleAttendanceMonitorThread import ScheduleAttendanceMonitorThread
 from .threads.ScheduleAttendanceThread import ScheduleAttendanceThread, AttendanceFlowLogin
 from .threads.ScheduleThread import ScheduleThread
-from .utils import StyleSheet, accounts, cfg
-from .utils.cache import cacheManager
-from .utils.migrate_data import account_data_directory
+from shared import accounts, cfg
+from shared.cache import cacheManager
+from shared.migrate_data import account_data_directory
+from .utils import StyleSheet
 from attendance.attendance import AttendanceWaterRecord, AttendanceFlow, WaterType, FlowRecordType
 from schedule import getAttendanceEndTime, getAttendanceStartTime, getClassStartTime, getClassEndTime
 from schedule.schedule_database import CourseInstance, CourseStatus, Exam
