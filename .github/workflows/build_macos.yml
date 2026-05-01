@@ -44,12 +44,25 @@ jobs:
       - name: Build Application
         run: uv run build.py
         
-      # 1. 生成 ZIP 文件 (完全保留你原来的代码)
+      # 1. 将 CLI 可执行文件、依赖、安装脚本合并进 .app
+      - name: Merge CLI into .app
+        run: |
+          cp dist/xjtutoolbox-cli/xjtutoolbox-cli dist/XJTUToolbox.app/Contents/MacOS/xjtutoolbox-cli
+          cp -r dist/xjtutoolbox-cli/_internal/* dist/XJTUToolbox.app/Contents/MacOS/
+          cp scripts/install-cli.sh dist/XJTUToolbox.app/Contents/Resources/install-cli.sh
+
+      # 2. 复制 CLI 安装脚本
+      - name: Copy install-cli.sh
+        run: |
+          cp scripts/install-cli.sh dist/install-cli.sh
+          chmod +x dist/install-cli.sh
+
+      # 3. 生成 ZIP 文件 (完全保留你原来的代码)
       - name: Archive(macOS)
         run: |
           ls dist/
           arch=`uname -m`
-          cd dist/ && zip XJTUToolbox-macOS-${arch}.zip -r XJTUToolbox.app/
+          cd dist/ && zip XJTUToolbox-macOS-${arch}.zip -r XJTUToolbox.app/ install-cli.sh
 
       # 2. 生成 DMG 文件 (新增，直接生成，不套 zip)
       - name: Create DMG

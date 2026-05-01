@@ -60,7 +60,7 @@ def account():
 @pass_ctx
 def account_list(ctx):
     """列出所有已保存的账户"""
-    from .account_cmd import cmd_list
+    from cli.account_cmd import cmd_list
     cmd_list(use_json=ctx.use_json)
 
 
@@ -69,7 +69,7 @@ def account_list(ctx):
 @pass_ctx
 def account_switch(ctx, uuid: str):
     """切换当前账户"""
-    from .account_cmd import cmd_switch
+    from cli.account_cmd import cmd_switch
     cmd_switch(uuid, use_json=ctx.use_json)
 
 
@@ -78,7 +78,7 @@ def account_switch(ctx, uuid: str):
 @pass_ctx
 def account_remove(ctx, uuid: str):
     """删除指定账户"""
-    from .account_cmd import cmd_remove
+    from cli.account_cmd import cmd_remove
     cmd_remove(uuid, use_json=ctx.use_json)
 
 
@@ -87,7 +87,7 @@ def account_remove(ctx, uuid: str):
 @pass_ctx
 def account_encrypt(ctx, password: str):
     """加密所有账户数据"""
-    from .account_cmd import cmd_set_encrypted
+    from cli.account_cmd import cmd_set_encrypted
     cmd_set_encrypted(True, password=password, use_json=ctx.use_json)
 
 
@@ -96,7 +96,7 @@ def account_encrypt(ctx, password: str):
 @pass_ctx
 def account_decrypt(ctx, password: str = None):
     """解密账户数据"""
-    from .account_cmd import cmd_set_encrypted
+    from cli.account_cmd import cmd_set_encrypted
     cmd_set_encrypted(False, password=password, use_json=ctx.use_json)
 
 
@@ -116,7 +116,7 @@ def schedule():
 @pass_ctx
 def schedule_get(ctx, semester: str = None, week: int = None, page: int = 1, page_size: int = 10, webvpn: bool = False):
     """获取课表"""
-    from .schedule_cmd import cmd_get
+    from cli.schedule_cmd import cmd_get
     cmd_get(semester=semester, week=week, page=page, page_size=page_size, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -128,7 +128,7 @@ def schedule_get(ctx, semester: str = None, week: int = None, page: int = 1, pag
 @pass_ctx
 def schedule_exam(ctx, semester: str = None, page: int = 1, page_size: int = 10, webvpn: bool = False):
     """获取考试安排"""
-    from .schedule_cmd import cmd_exam
+    from cli.schedule_cmd import cmd_exam
     cmd_exam(semester=semester, page=page, page_size=page_size, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -139,7 +139,7 @@ def schedule_exam(ctx, semester: str = None, page: int = 1, page_size: int = 10,
 @pass_ctx
 def schedule_export_ics(ctx, output: str, semester: str = None, webvpn: bool = False):
     """导出课表为 ICS 日历文件"""
-    from .schedule_cmd import cmd_export_ics
+    from cli.schedule_cmd import cmd_export_ics
     cmd_export_ics(output, semester=semester, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -148,7 +148,7 @@ def schedule_export_ics(ctx, output: str, semester: str = None, webvpn: bool = F
 @pass_ctx
 def schedule_attendance(ctx, webvpn: bool = False):
     """获取本周考勤记录"""
-    from .schedule_cmd import cmd_get_attendance
+    from cli.schedule_cmd import cmd_get_attendance
     cmd_get_attendance(use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -167,7 +167,7 @@ def score():
 @pass_ctx
 def score_query(ctx, semester: str = None, page: int = 1, page_size: int = 10, webvpn: bool = False):
     """查询成绩"""
-    from .score_cmd import cmd_query
+    from cli.score_cmd import cmd_query
     cmd_query(semester=semester, page=page, page_size=page_size, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -185,7 +185,7 @@ def attendance():
 @pass_ctx
 def attendance_flow(ctx, page: int = 1, page_size: int = 5, webvpn: bool = False):
     """查询考勤流水"""
-    from .attendance_cmd import cmd_flow
+    from cli.attendance_cmd import cmd_flow
     cmd_flow(page=page, page_size=page_size, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -202,7 +202,7 @@ def judge():
 @pass_ctx
 def judge_list(ctx, show_completed: bool = False, webvpn: bool = False):
     """列出评教问卷"""
-    from .judge_cmd import cmd_list
+    from cli.judge_cmd import cmd_list
     cmd_list(show_completed=show_completed, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -213,7 +213,7 @@ def judge_list(ctx, show_completed: bool = False, webvpn: bool = False):
 @pass_ctx
 def judge_all(ctx, score: str = "95", comment: str = "老师讲得很好，课程内容充实。", webvpn: bool = False):
     """一键全部评教"""
-    from .judge_cmd import cmd_all
+    from cli.judge_cmd import cmd_all
     cmd_all(score=score, comment=comment, use_webvpn=webvpn, use_json=ctx.use_json)
 
 
@@ -235,7 +235,7 @@ def empty_room():
 def empty_room_query(ctx, campus: str = "兴庆", building: str = None, date: str = None,
                      page: int = 1, page_size: int = 10, cf: bool = False):
     """查询空闲教室"""
-    from .empty_room_cmd import cmd_query
+    from cli.empty_room_cmd import cmd_query
     cmd_query(campus=campus, building=building, date=date, page=page, page_size=page_size, use_cf=cf, use_json=ctx.use_json)
 
 
@@ -246,7 +246,7 @@ def empty_room_query(ctx, campus: str = "兴庆", building: str = None, date: st
 @pass_ctx
 def empty_room_export(ctx, output: str, campus: str = "兴庆", date: str = None):
     """导出空闲教室为图片"""
-    from .empty_room_cmd import cmd_export_image
+    from cli.empty_room_cmd import cmd_export_image
     cmd_export_image(output, campus=campus, date=date, use_json=ctx.use_json)
 
 
@@ -265,7 +265,7 @@ def notice():
 @pass_ctx
 def notice_list(ctx, source: str = None, unread: bool = False, page: int = 1, page_size: int = 10):
     """查看通知列表"""
-    from .notice_cmd import cmd_list
+    from cli.notice_cmd import cmd_list
     cmd_list(source=source, unread_only=unread, page=page, page_size=page_size, use_json=ctx.use_json)
 
 
@@ -273,7 +273,7 @@ def notice_list(ctx, source: str = None, unread: bool = False, page: int = 1, pa
 @pass_ctx
 def notice_refresh(ctx):
     """立刻刷新通知"""
-    from .notice_cmd import cmd_refresh
+    from cli.notice_cmd import cmd_refresh
     cmd_refresh(use_json=ctx.use_json)
 
 
@@ -281,7 +281,7 @@ def notice_refresh(ctx):
 @pass_ctx
 def notice_mark_read(ctx):
     """全部标记已读"""
-    from .notice_cmd import cmd_mark_all_read
+    from cli.notice_cmd import cmd_mark_all_read
     cmd_mark_all_read(use_json=ctx.use_json)
 
 
@@ -289,7 +289,7 @@ def notice_mark_read(ctx):
 @pass_ctx
 def notice_sources(ctx):
     """列出通知来源"""
-    from .notice_cmd import cmd_sources
+    from cli.notice_cmd import cmd_sources
     cmd_sources(use_json=ctx.use_json)
 
 
@@ -306,7 +306,7 @@ def lms():
 @pass_ctx
 def lms_courses(ctx, page: int = 1, page_size: int = 10):
     """列出课程"""
-    from .lms_cmd import cmd_courses
+    from cli.lms_cmd import cmd_courses
     cmd_courses(page=page, page_size=page_size, use_json=ctx.use_json)
 
 
@@ -318,7 +318,7 @@ def lms_courses(ctx, page: int = 1, page_size: int = 10):
 @pass_ctx
 def lms_activities(ctx, course_id: int, activity_type: str = None, page: int = 1, page_size: int = 10):
     """列出课程活动"""
-    from .lms_cmd import cmd_activities
+    from cli.lms_cmd import cmd_activities
     cmd_activities(course_id, activity_type=activity_type, page=page, page_size=page_size, use_json=ctx.use_json)
 
 
@@ -327,7 +327,7 @@ def lms_activities(ctx, course_id: int, activity_type: str = None, page: int = 1
 @pass_ctx
 def lms_detail(ctx, activity_id: int):
     """查看活动详情"""
-    from .lms_cmd import cmd_detail
+    from cli.lms_cmd import cmd_detail
     cmd_detail(activity_id, use_json=ctx.use_json)
 
 
@@ -338,7 +338,7 @@ def lms_detail(ctx, activity_id: int):
 @pass_ctx
 def lms_download(ctx, activity_id: int, file_id: int = None, output_dir: str = "."):
     """下载活动附件"""
-    from .lms_cmd import cmd_download
+    from cli.lms_cmd import cmd_download
     cmd_download(activity_id, file_id=file_id, output_dir=output_dir, use_json=ctx.use_json)
 
 
@@ -354,7 +354,7 @@ def webvpn():
 @pass_ctx
 def webvpn_encode(ctx, url: str):
     """普通网址 → WebVPN 网址"""
-    from .webvpn_cmd import cmd_encode
+    from cli.webvpn_cmd import cmd_encode
     cmd_encode(url, use_json=ctx.use_json)
 
 
@@ -363,7 +363,7 @@ def webvpn_encode(ctx, url: str):
 @pass_ctx
 def webvpn_decode(ctx, url: str):
     """WebVPN 网址 → 普通网址"""
-    from .webvpn_cmd import cmd_decode
+    from cli.webvpn_cmd import cmd_decode
     cmd_decode(url, use_json=ctx.use_json)
 
 
@@ -378,7 +378,7 @@ def config():
 @pass_ctx
 def config_list(ctx):
     """列出所有配置项"""
-    from .config_cmd import cmd_list
+    from cli.config_cmd import cmd_list
     cmd_list(use_json=ctx.use_json)
 
 
@@ -387,7 +387,7 @@ def config_list(ctx):
 @pass_ctx
 def config_get(ctx, key: str):
     """获取配置项值"""
-    from .config_cmd import cmd_get
+    from cli.config_cmd import cmd_get
     cmd_get(key, use_json=ctx.use_json)
 
 
@@ -397,7 +397,7 @@ def config_get(ctx, key: str):
 @pass_ctx
 def config_set(ctx, key: str, value: str):
     """设置配置项值"""
-    from .config_cmd import cmd_set
+    from cli.config_cmd import cmd_set
     cmd_set(key, value, use_json=ctx.use_json)
 
 
@@ -413,7 +413,7 @@ def update():
 @pass_ctx
 def update_check(ctx, prerelease: bool = False):
     """检查更新"""
-    from .update_cmd import cmd_check
+    from cli.update_cmd import cmd_check
     cmd_check(use_prerelease=prerelease, use_json=ctx.use_json)
 
 

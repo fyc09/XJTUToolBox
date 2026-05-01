@@ -33,8 +33,16 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: Build Application
-        # 假设 build.py 会生成 dist/XJTUToolbox 文件夹
+        # 假设 build.py 会生成 dist/XJTUToolbox 文件夹 和 dist/xjtutoolbox-cli.exe
         run: uv run build.py
+
+      - name: Copy CLI into GUI folder
+        run: |
+          Copy-Item ./dist/xjtutoolbox-cli/xjtutoolbox-cli.exe ./dist/XJTUToolbox/ -Force
+          # 合并 _internal（CLI 需要的额外文件，GUI 已包含大部分）
+          if (Test-Path ./dist/xjtutoolbox-cli/_internal) {
+            Copy-Item ./dist/xjtutoolbox-cli/_internal/* ./dist/XJTUToolbox/_internal/ -Recurse -Force
+          }
 
       - name: Archive (Windows)
         run: |

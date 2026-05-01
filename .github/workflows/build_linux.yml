@@ -70,6 +70,16 @@ jobs:
       - name: Build Application
         run: uv run build.py
 
+      - name: Merge CLI into GUI folder (x86_64)
+        run: |
+          cp dist/xjtutoolbox-cli/xjtutoolbox-cli dist/XJTUToolbox/xjtutoolbox-cli
+          cp -r dist/xjtutoolbox-cli/_internal/* dist/XJTUToolbox/_internal/
+
+      - name: Merge CLI into GUI folder (x86_64)
+        run: |
+          cp dist/xjtutoolbox-cli/xjtutoolbox-cli dist/XJTUToolbox/xjtutoolbox-cli
+          cp -r dist/xjtutoolbox-cli/_internal/* dist/XJTUToolbox/_internal/
+
       - name: Create Packages (x86_64)
         run: |
           cd dist/
@@ -78,11 +88,25 @@ jobs:
           mkdir -p wrapper/usr/bin wrapper/usr/share/applications
           echo -e '#!/bin/sh\nUSER_DIR="$HOME/.config/XJTUToolbox"\nmkdir -p "$USER_DIR"\ncd "$USER_DIR" || exit 1\nexec /opt/XJTUToolbox/XJTUToolbox "$@"' > wrapper/usr/bin/xjtutoolbox
           chmod +x wrapper/usr/bin/xjtutoolbox
+          echo -e '#!/bin/sh\nexec /opt/XJTUToolbox/xjtutoolbox-cli "$@"' > wrapper/usr/bin/xjtutoolbox-cli
+          chmod +x wrapper/usr/bin/xjtutoolbox-cli
           echo -e '[Desktop Entry]\nName=XJTUToolbox\nExec=xjtutoolbox\nIcon=xjtutoolbox\nType=Application\nCategories=Utility;\nTerminal=false' > wrapper/usr/share/applications/xjtutoolbox.desktop
           
-          fpm -s dir -t deb -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.deb XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
-          fpm -s dir -t rpm -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.rpm XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
-          fpm -s dir -t pacman -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.pkg.tar.zst XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+          fpm -s dir -t deb -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.deb \
+            XJTUToolbox=/opt/ \
+            wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+            wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+            wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+          fpm -s dir -t rpm -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.rpm \
+            XJTUToolbox=/opt/ \
+            wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+            wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+            wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+          fpm -s dir -t pacman -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-x86_64.pkg.tar.zst \
+            XJTUToolbox=/opt/ \
+            wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+            wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+            wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
 
       - name: Create AppImage (x86_64)
         run: |
@@ -159,17 +183,33 @@ jobs:
 
             echo "::group::3. 执行构建与打包 (ARM64)"
             uv run build.py
+            cp xjtutoolbox-cli/xjtutoolbox-cli XJTUToolbox/xjtutoolbox-cli
+            cp -r xjtutoolbox-cli/_internal/* XJTUToolbox/_internal/
             cd dist/
             VERSION=${GITHUB_REF_NAME#v}
-            [ ! \"\$VERSION\" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ] && VERSION=\"1.0.0\"
+            if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then VERSION="1.0.0"; fi
             mkdir -p wrapper/usr/bin wrapper/usr/share/applications
             echo -e '#!/bin/sh\nUSER_DIR=\"\$HOME/.config/XJTUToolbox\"\nmkdir -p \"\$USER_DIR\"\ncd \"\$USER_DIR\" || exit 1\nexec /opt/XJTUToolbox/XJTUToolbox \"\$@\"' > wrapper/usr/bin/xjtutoolbox
             chmod +x wrapper/usr/bin/xjtutoolbox
+            echo -e '#!/bin/sh\nexec /opt/XJTUToolbox/xjtutoolbox-cli \"\$@\"' > wrapper/usr/bin/xjtutoolbox-cli
+            chmod +x wrapper/usr/bin/xjtutoolbox-cli
             echo -e '[Desktop Entry]\nName=XJTUToolbox\nExec=xjtutoolbox\nIcon=xjtutoolbox\nType=Application\nCategories=Utility;\nTerminal=false' > wrapper/usr/share/applications/xjtutoolbox.desktop
             
-            fpm -a arm64 -s dir -t deb -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.deb XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
-            fpm -a arm64 -s dir -t rpm -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.rpm XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
-            fpm -a arm64 -s dir -t pacman -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.pkg.tar.zst XJTUToolbox=/opt/ wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+            fpm -a arm64 -s dir -t deb -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.deb \
+              XJTUToolbox=/opt/ \
+              wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+              wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+              wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+            fpm -a arm64 -s dir -t rpm -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.rpm \
+              XJTUToolbox=/opt/ \
+              wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+              wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+              wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
+            fpm -a arm64 -s dir -t pacman -n xjtutoolbox -v $VERSION -p XJTUToolbox-linux-arm64.pkg.tar.zst \
+              XJTUToolbox=/opt/ \
+              wrapper/usr/bin/xjtutoolbox=/usr/bin/xjtutoolbox wrapper/usr/bin/xjtutoolbox-cli=/usr/bin/xjtutoolbox-cli \
+              wrapper/usr/share/pixmaps/xjtutoolbox.png=/usr/share/pixmaps/xjtutoolbox.png \
+              wrapper/usr/share/applications/xjtutoolbox.desktop=/usr/share/applications/xjtutoolbox.desktop
             echo "::endgroup::"
 
             echo "::group::4. 打包 ARM64 AppImage"

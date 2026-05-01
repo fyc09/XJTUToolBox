@@ -4,6 +4,7 @@ from traceback import format_exception
 from types import TracebackType
 from typing import Type, Any, Dict
 import sys
+import os
 
 from PyQt5.QtCore import pyqtSlot, QUrl, Qt, QSize, QTimer, QObject, QEvent
 from PyQt5.QtGui import QIcon, QDesktopServices
@@ -85,6 +86,8 @@ class MainWindow(MSFluentWindow):
         self.on_theme_changed()
         self.initWindow()
 
+        QTimer.singleShot(0, self._install_cli_symlink)
+
         self.splashScreen = SplashScreen(QIcon("assets/icons/main_icon.ico"), self)
         self.splashScreen.setIconSize(QSize(102, 102))
         self.show()
@@ -133,6 +136,17 @@ class MainWindow(MSFluentWindow):
         shortcut.activated.connect(self.close)
 
         self.splashScreen.finish()
+
+    def _install_cli_symlink(self):
+        if platform.system() != 'Darwin':
+            return
+        src = "/Applications/XJTUToolbox.app/Contents/MacOS/xjtutoolbox-cli"
+        dst = "/usr/local/bin/xjtutoolbox-cli"
+        if os.path.exists(src) and not os.path.exists(dst):
+            import subprocess
+            ret = subprocess.run(["ln", "-sf", src, dst], capture_output=True)
+            if ret.returncode != 0:
+                logger.warning("无法自动安装 CLI 软链，请手动执行 scripts/install-cli.sh")
 
     def initWindow(self):
         self.setWindowTitle("仙交百宝箱")

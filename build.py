@@ -49,6 +49,19 @@ def main():
         ]
         run(updater_args)
 
+    # 3. 打包 CLI 命令行工具（全平台，文件夹模式共享依赖库）
+    print(">>> 开始打包命令行工具...")
+    cli_args = [
+        'cli/main.py',
+        '--name=xjtutoolbox-cli',
+        '--collect-datas=fake_useragent',               # 收集 fake_useragent 数据
+        '--noconfirm',
+        '--clean',
+    ]
+    if system == 'win32':
+        cli_args.append('--console')
+    run(cli_args)
+
     print("\n所有打包任务已完成！")
 
 if __name__ == '__main__':
