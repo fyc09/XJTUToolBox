@@ -54,6 +54,7 @@ def main():
     cli_args = [
         'cli/main.py',
         '--name=xjtutoolbox-cli',
+        '--icon=assets/icons/main_icon.ico',
         '--collect-datas=fake_useragent',               # 收集 fake_useragent 数据
         '--noconfirm',
         '--clean',
