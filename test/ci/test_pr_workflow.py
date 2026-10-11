@@ -774,13 +774,8 @@ class TestInventoryContract(unittest.TestCase):
         with TemporaryDirectory() as temporary_directory:
             test_root = Path(temporary_directory) / "test"
             baseline = {
-                "ai/existing.py": 'TEST_DOMAIN = "ai"\n',
-                "ui/existing.py": 'TEST_DOMAIN = "qt-ui"\n',
-                "notification/existing.py": (
-                    'TEST_DOMAIN = "notification-crawler"\n'
-                ),
-                "auth/existing.py": 'TEST_DOMAIN = "auth-session"\n',
-                "schedule/existing.py": 'TEST_DOMAIN = "schedule"\n',
+                f"{domain.id}/existing.py": f"TEST_DOMAIN = {domain.id!r}\n"
+                for domain in DOMAIN_DEFINITIONS
             }
             for relative, source in baseline.items():
                 path = test_root / relative
@@ -809,7 +804,8 @@ class TestInventoryContract(unittest.TestCase):
 
             self.assertIn("test.feature_a.test_first", merged_inventory[0].modules)
             self.assertIn(
-                "test.feature_b.test_second", merged_inventory[-1].modules
+                "test.feature_b.test_second",
+                next(shard for shard in merged_inventory if shard.id == "schedule").modules,
             )
             self.assertEqual(
                 ("test.feature_b.test_second",),
@@ -1023,7 +1019,7 @@ class TestInventoryContract(unittest.TestCase):
 
             markdown = render_inventory_markdown(test_root=test_root)
 
-            self.assertIn("6 product test modules", markdown)
+            self.assertIn(f"{len(DOMAIN_DEFINITIONS) + 1} product test modules", markdown)
             self.assertIn("`test.feature.test_added`", markdown)
             self.assertIn("### Regression modules", markdown)
 

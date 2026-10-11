@@ -64,14 +64,11 @@ uv run --frozen python -m test.ci.check_test_contract --format markdown
 
 `product_test_modules()` 扫描 `test/**/*.py`，只排除任意目录中的 `__init__.py` 和精确的
 `test/ci/**` 子树。顶层 `test/ci.py` 和路径如 `test/feature/ci/test_case.py` 仍是产品测试；新增、删除、重复、意外
-声明或语法错误都会让合同失败。完整发现命令仍为：
+声明或语法错误都会让合同失败。完整清单仍通过 AST 扫描所有产品测试文件，包括非 `test*.py` 的历史文件。
 
-```bash
-uv run --frozen python -m unittest discover -s test -t . -p "*.py" -v
-```
-
-`-t .` 明确项目根目录为顶层导入目录，`*.py` 也会收录 `test/auth/login.py`、
-`test/auth/util.py` 和 `test/sessions/session_manager.py` 等非 `test*.py` 文件。
+迁移期新增 `core`（分层核心与 CLI）和 `qt6-ui`（PySide6/QML）两个域。`qt-ui` 保留全部旧 Qt5 测试。
+必须使用 `local_test.py` 或域 runner 在独立进程中运行；禁止用一次全树 `unittest discover` 将 Qt5/Qt6
+导入同一进程。新 QML 域使用 `QT_QUICK_BACKEND=software`，所有平台继续执行旧域、新域与回归门禁。
 
 GUI 测试使用 Qt 离屏和软件渲染：
 

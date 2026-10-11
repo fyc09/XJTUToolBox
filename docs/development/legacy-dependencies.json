@@ -1,0 +1,1026 @@
+{
+  "baseline": "acc8e1e9517e49fa502d7380b187d1f9e570c632",
+  "exceptions": [
+    {
+      "path": "app.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets"
+      ],
+      "owner": "legacy-startup",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/AIInterface.py",
+      "framework_imports": [
+        "PyQt5",
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "AIInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/AccountInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "AccountInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/AttendanceInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "AttendanceInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/CampusCardInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "CampusCardInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/FitnessInterface.py",
+      "framework_imports": [
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "FitnessInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/HomeInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "HomeInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/LMSInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "LMSInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/LibraryInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "LibraryInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/ProfileInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "ProfileInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/ScheduleInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "ScheduleInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/SchoolCalendarInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "SchoolCalendarInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/SchoolCourseInterface.py",
+      "framework_imports": [
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "SchoolCourseInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/ScoreInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "ScoreInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/SettingInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "SettingInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/ToolBoxInterface.py",
+      "framework_imports": [
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "ToolBoxInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/TrayInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets"
+      ],
+      "owner": "TrayInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/VenueInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "VenueInterface.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/copyable_switch_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/course_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/custom_color_setting_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/custom_switch_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/link_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/lms_activity_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/pure_lesson_card.py",
+      "framework_imports": [
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/scheduled_notice_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/tool_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/cards/venue_card.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "cards",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/CampusPage.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/CardManagerDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/CustomMessageBox.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/MultiSelectionComboBox.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets",
+        "qfluentwidgets.components.widgets.combo_box"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/NoticeCard.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/NoticeRuleCard.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/NoticeSourceCard.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/ProgressInfoBar.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets",
+        "qfluentwidgets.components.widgets.info_bar"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/RuleLine.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/ScheduleTable.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/components/VisualSeatView.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets"
+      ],
+      "owner": "components",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/ctrl_c.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "ctrl_c.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/main_window.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "main_window.py",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/AutoJudgeInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/AvatarDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/ChangeTermDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/EmptyRoomInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/EncryptDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/ExportCalendarDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/GraduateJudgeOptionInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/JudgeAllOptionInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/JudgeOptionInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/LessonConflictDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/LessonDetailDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets",
+        "qfluentwidgets.common.overload",
+        "qfluentwidgets.components.widgets.card_widget"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/LoginInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/NoticeChoiceInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/NoticeInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/NoticeRuleInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/NoticeSettingInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/QRCodeLoginDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/ResetVisitorIdDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/RuleSetInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/ScoreDetailDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/TermStartTimeDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/VerifyCodeDialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/WebVPNConvertInterface.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/activity_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/batch_download_dialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/common.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/course_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/detail_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/image_preview_dialog.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/start_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/submission_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/sub_interfaces/lms/video_page.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtMultimedia",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets",
+        "qfluentwidgets.multimedia"
+      ],
+      "owner": "sub_interfaces",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/AttendanceFlowThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/CFEmptyRoomThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/CampusFeatureThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/DownloadUpdateThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/EmptyRoomThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ExamScheduleThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/GraduateJudgeThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/GraduateScheduleThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/GraduateScoreThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/HolidayThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/JudgeThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/LMSBatchDownloadThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/LMSThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/LoginThreads.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/NoticeThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ProcessWidget.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtWidgets",
+        "qfluentwidgets"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ScheduleAttendanceMonitorThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ScheduleAttendanceThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ScheduleThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/ScoreThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/SessionKeepAliveThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/UpdateThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore",
+        "PyQt5.QtGui",
+        "qfluentwidgets"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/threads/VenueThread.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "threads",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/account.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/config.py",
+      "framework_imports": [
+        "qfluentwidgets"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/icons.py",
+      "framework_imports": [
+        "qfluentwidgets"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/qt_mfa.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/qt_qrcode_login.py",
+      "framework_imports": [
+        "PyQt5.QtCore"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/single_app.py",
+      "framework_imports": [
+        "PyQt5.QtNetwork",
+        "PyQt5.QtWidgets"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/style_sheet.py",
+      "framework_imports": [
+        "PyQt5.QtGui",
+        "qfluentwidgets"
+      ],
+      "owner": "utils",
+      "remove_when": "该功能完整迁移到 QML/共享服务后删除；最后在 P6 清零"
+    },
+    {
+      "path": "app/utils/legacy_academic.py",
+      "framework_imports": [],
+      "owner": "compatibility-adapter",
+      "remove_when": "旧成绩页退出后删除，成绩流程仅保留 AcademicService"
+    },
+    {
+      "path": "app/utils/legacy_download.py",
+      "framework_imports": [],
+      "owner": "compatibility-adapter",
+      "remove_when": "旧 LMS 页面退出后删除，单文件下载仅保留 DownloadService"
+    }
+  ]
+}

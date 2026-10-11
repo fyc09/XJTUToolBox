@@ -63,6 +63,7 @@ def isolated_environment(
             "PYTHONUTF8": "1",
             "QT_QPA_PLATFORM": "offscreen",
             "QT_OPENGL": "software",
+            "QT_QUICK_BACKEND": "software",
             "LIBGL_ALWAYS_SOFTWARE": "1",
         }
     )

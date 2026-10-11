@@ -74,6 +74,7 @@ jobs:
       PYTHONUTF8: "1"
       QT_QPA_PLATFORM: offscreen
       QT_OPENGL: software
+      QT_QUICK_BACKEND: software
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -120,6 +121,7 @@ jobs:
       PYTHONUTF8: "1"
       QT_QPA_PLATFORM: offscreen
       QT_OPENGL: software
+      QT_QUICK_BACKEND: software
       LIBGL_ALWAYS_SOFTWARE: "1"
     steps:
       - name: Checkout
@@ -140,6 +142,7 @@ jobs:
             PYTHONUTF8: 1
             QT_QPA_PLATFORM: offscreen
             QT_OPENGL: software
+            QT_QUICK_BACKEND: software
             LIBGL_ALWAYS_SOFTWARE: 1
             XDG_STATE_HOME: /tmp/xjtu-test-state
             XDG_CONFIG_HOME: /tmp/xjtu-test-config
@@ -183,6 +186,7 @@ jobs:
       PYTHONUTF8: "1"
       QT_QPA_PLATFORM: offscreen
       QT_OPENGL: software
+      QT_QUICK_BACKEND: software
       LIBGL_ALWAYS_SOFTWARE: "1"
     steps:
       - name: Checkout

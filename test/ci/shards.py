@@ -53,6 +53,8 @@ DOMAIN_DEFINITIONS: tuple[Shard, ...] = (
     Shard("notification-crawler", "Notifications and crawler"),
     Shard("auth-session", "Authentication and sessions"),
     Shard("schedule", "Schedule"),
+    Shard("core", "Layered core and CLI"),
+    Shard("qt6-ui", "Qt6 and QML UI"),
 )
 
 
